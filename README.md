@@ -23,11 +23,24 @@ export ANTHROPIC_API_KEY=sk-...   # macOS/Linux
 $env:ANTHROPIC_API_KEY="sk-..."   # Windows PowerShell
 ```
 
+## Sample dataset (Olist)
+
+`setup_database.py` loads the [Olist Brazilian E-Commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) CSVs into a local SQLite database with a pre-built `order_summary` view:
+
+```bash
+# place the Olist CSVs in data/raw/, then:
+python setup_database.py
+# → writes data/olist.db
+```
+
+Connect DataPulse to `data/olist.db` via the SQLite option in the sidebar.
+
 ## Project Structure
 
 ```
 datapulse/
 ├── app.py                        # Streamlit frontend
+├── setup_database.py             # One-time loader for Olist CSV → SQLite
 ├── agent/
 │   └── core.py                   # ReAct agent loop (Claude Opus 4.8)
 └── connectors/
