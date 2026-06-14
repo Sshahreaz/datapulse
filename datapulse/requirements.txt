@@ -1,0 +1,7 @@
+anthropic
+streamlit
+pandas
+tabulate
+openpyxl
+psycopg2-binary
+mysql-connector-python
